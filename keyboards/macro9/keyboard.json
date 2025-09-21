@@ -11,8 +11,8 @@
         "nkro": true
     },
     "matrix_pins": {
-        "cols": ["C2", "C2", "C2"],
-        "rows": ["D1", "D1", "D1"]
+        "cols": ["D1", "D0", "D4"],
+        "rows": ["C6", "D7", "E6"]
     },
     "url": "",
     "usb": {
