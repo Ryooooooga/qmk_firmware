@@ -9,17 +9,6 @@ enum layers {
     LAYER_MEDIA,
 };
 
-enum custom_keycodes {
-    MCR_PRNS = SAFE_RANGE, // ()
-    MCR_BRCS,              // {}
-    MCR_BRCKTS,            // []
-    MCR_ANGLS,             // <>
-    MCR_ASSGN,             // :=
-    MCR_NE,                // !=
-    MCR_LE,                // <=
-    MCR_GE,                // >=
-};
-
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
@@ -63,17 +52,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,      KC_F1,    KC_F2,    KC_F3,      KC_F4,     KC_F5,
         S(KC_GRAVE), S(KC_1),  S(KC_2),  S(KC_3),    S(KC_4),   S(KC_5),
         KC_GRAVE,    KC_1,     KC_2,     KC_3,       KC_4,      KC_5,
-        _______,     MCR_PRNS, MCR_BRCS, MCR_BRCKTS, MCR_ANGLS, _______,
-        _______,     _______,  _______,  _______,
-                                         _______, _______, _______,
+        _______,     _______, _______, _______, _______, _______,
+        _______,     _______, _______, _______,
+                                       _______, _______, _______,
                                              KC_HOME, KC_END,
 
         // Right
-        KC_F6,     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-        S(KC_6),   S(KC_7), S(KC_8), S(KC_9), S(KC_0), S(KC_MINUS),S(KC_EQUAL),
-        KC_6,      KC_7,    KC_8,    KC_9,    KC_0,   KC_MINUS, KC_EQUAL,
-        MCR_ASSGN, MCR_NE,  MCR_LE,  MCR_GE,  _______, KC_PGUP,
-                            _______, _______, KC_HOME, KC_PGDN, KC_END,
+        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+        S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), S(KC_MINUS),S(KC_EQUAL),
+        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,   KC_MINUS, KC_EQUAL,
+        _______, _______, _______, _______, _______, KC_PGUP,
+                          _______, _______, KC_HOME, KC_PGDN, KC_END,
         _______, _______, _______,
             KC_PGDN, KC_PGUP
     ),
@@ -99,53 +88,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 // clang-format on
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case MCR_PRNS:
-            if (record->event.pressed) {
-                SEND_STRING("()");
-                tap_code(KC_LEFT);
-            }
-            break;
-        case MCR_BRCS:
-            if (record->event.pressed) {
-                SEND_STRING("{}");
-                tap_code(KC_LEFT);
-            }
-            break;
-        case MCR_BRCKTS:
-            if (record->event.pressed) {
-                SEND_STRING("[]");
-                tap_code(KC_LEFT);
-            }
-            break;
-        case MCR_ANGLS:
-            if (record->event.pressed) {
-                SEND_STRING("<>");
-                tap_code(KC_LEFT);
-            }
-            break;
-        case MCR_ASSGN:
-            if (record->event.pressed) {
-                SEND_STRING(":=");
-            }
-            break;
-        case MCR_NE:
-            if (record->event.pressed) {
-                SEND_STRING("!=");
-            }
-            return true;
-        case MCR_LE:
-            if (record->event.pressed) {
-                SEND_STRING("<=");
-            }
-            break;
-        case MCR_GE:
-            if (record->event.pressed) {
-                SEND_STRING(">=");
-            }
-            break;
-    }
-    return true;
-}
