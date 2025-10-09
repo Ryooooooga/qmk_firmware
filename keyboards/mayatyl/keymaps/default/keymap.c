@@ -12,17 +12,17 @@ enum layers {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
-     * ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┬───┐
-     * │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │               │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │
-     * ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┼───┤
-     * │Tab│ Q │ W │ E │ R │ T │               │ Y │ U │ I │ O │ P │ [ │ ] │
-     * ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┼───┤
-     * │Cap│ A │ S │ D │ F │ G │               │ H │ J │ K │ L │ ; │ ' │ \ │
-     * ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┼───┘
-     * │Sft│ Z │ X │ C │ V │ B │               │ N │ M │ , │ . │ / │Up │
-     * ├───┼───┼───┼───┼───┴───┘               └───┴───┼───┼───┼───┼───┼───┐
-     * │Ctl│Win│Alt│LN2│┌───┬───┬───┐ ┌───┬───┬───┐    │LN1│Esc│Lft│Dwn│Rgt│
-     * └───┴───┴───┴───┘│Spc│Tab│MO2│ │Del│Bsp│Ent│    └───┴───┴───┴───┴───┘
+     * ┌───┬───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┬───┬───┐
+     * │ ` │ 1 │ 2 │ 3 │ 4 │ 5 │           │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │
+     * ├───┼───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┼───┼───┤
+     * │Tab│ Q │ W │ E │ R │ T │           │ Y │ U │ I │ O │ P │ [ │ ] │
+     * ├───┼───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┼───┼───┤
+     * │Cap│ A │ S │ D │ F │ G │           │ H │ J │ K │ L │ ; │ ' │ \ │
+     * ├───┼───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┼───┼───┘
+     * │Sft│ Z │ X │ C │ V │ B │           │ N │ M │ , │ . │ / │Up │
+     * ├───┼───┼───┼───┼───┴───┘           └───┴───┼───┼───┼───┼───┼───┐
+     * │Ctl│Win│Alt│LN2│┌───┬───┬───┐ ┌───┬───┬───┐│LN1│Meh│Lft│Dwn│Rgt│
+     * └───┴───┴───┴───┘│Spc│Del│Tab│ │Esc│Bsp│Ent│└───┴───┴───┴───┴───┘
      *                  └─┬─┴─┬─┴─┬─┘ └─┬─┴─┬─┴─┬─┘
      *                    │Lft│Rgt│     │Dwn│Up │
      *                    └───┴───┘     └───┴───┘
@@ -42,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,         KC_LBRC,  KC_RBRC,
         KC_H,    KC_J,    KC_K,     KC_L,    KC_SEMICOLON, KC_QUOTE, KC_BSLS,
         KC_N,    KC_M,    KC_COMMA, KC_DOT,  KC_SLASH,     KC_UP,
-                          KC_LNG1,  KC_ESC,  KC_LEFT,      KC_DOWN,  KC_RIGHT,
-        LT(LAYER_MEDIA, KC_DEL), LT(LAYER_SYMBOL, KC_BSPC), RSFT_T(KC_ENT),
+                          KC_LNG1,  MEH_T(KC_F20), KC_LEFT, KC_DOWN, KC_RIGHT,
+        LT(LAYER_MEDIA, KC_ESC), LT(LAYER_SYMBOL, KC_BSPC), RSFT_T(KC_ENT),
             KC_DOWN, KC_UP
     ),
 
