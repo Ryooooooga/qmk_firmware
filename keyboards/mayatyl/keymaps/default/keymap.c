@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_CAPS,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
         KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,
         KC_LCTL,  KC_LGUI, KC_LALT, KC_LNG2,
-                                    LSFT_T(KC_SPC), LT(LAYER_SYMBOL, KC_TAB), MO(LAYER_MEDIA),
+                                    LSFT_T(KC_SPC), LT(LAYER_SYMBOL, KC_DEL), LT(LAYER_MEDIA, KC_TAB),
                                         KC_LEFT, KC_RIGHT,
 
         // Right
